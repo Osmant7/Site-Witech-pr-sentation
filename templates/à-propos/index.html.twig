@@ -1,0 +1,343 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!{% endblock %}
+
+{% block stylesheets %}
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+<style>
+
+body{
+    margin:30px;
+}
+
+{# FLECHE HAUT SITE #}
+
+.cRetour {
+  border-radius:3px;
+  padding:10px;
+  font-size:24px;
+  text-align:center;
+  color:#420068;
+  background:rgba(0, 0, 0, 0.25);
+  z-index:99999;
+  transition:all ease-in 0.2s;
+  position: fixed;
+  cursor: pointer;
+  bottom: 1em;
+  right: 20px;
+  display: none;
+}
+.cRetour:before{ content: "\25b2"; }
+.cRetour:hover{
+  background:rgba(0, 0, 0, 1);
+  transition:all ease-in 0.2s;
+}
+
+{#  FIN FLECHE HAUT SITE #}
+
+#ovale {
+    width: 700px;
+    height: 800px;
+    border-radius: 700px / 800px;
+    background: rgba(0,0,0,.125);
+}
+
+.fa-linkedin-in{
+    color:#420068;
+    font-size:25px;
+    transition: all .2s ease-in-out;
+}
+
+.fa-linkedin-in:hover{
+    transform: scale(1.3);
+}
+
+{# FOOTER #}
+
+.footerLink{
+    text-decoration:none;
+    color:#420068;
+    transition: all .2s ease-in-out;
+    margin:7px;
+}
+
+.footerLink:hover{
+    transform: scale(1.2);
+}
+
+.fa-instagram, .fa-linkedin, .fa-facebook{
+    font-size:50px;
+    color: white;
+    transition: all .2s ease-in-out;
+}
+
+.fa-instagram:hover, .fa-linkedin:hover, .fa-facebook:hover{
+    transform: scale(1.2);
+}
+
+{# FIN FOOTER #}
+
+
+</style>
+
+
+{% endblock %}
+
+
+
+
+{% block javascripts %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+<script>            
+jQuery(document).ready(function() {
+  var duration = 500;
+  jQuery(window).scroll(function() {
+    if (jQuery(this).scrollTop() > 100) {
+      // Si un défillement de 100 pixels ou plus.
+      // Ajoute le bouton
+      jQuery('.cRetour').fadeIn(duration);
+    } else {
+      // Sinon enlève le bouton
+      jQuery('.cRetour').fadeOut(duration);
+    }
+  });
+				
+  jQuery('.cRetour').click(function(event) {
+    // Un clic provoque le retour en haut animé.
+    event.preventDefault();
+    jQuery('html, body').animate({scrollTop: 0}, duration);
+    return false;
+  })
+});
+</script>
+
+
+{% endblock %}
+
+{% block body %}
+
+<div style="margin-top:120px;text-align:center;">
+        <h1 style="background: #420068;
+    background: -webkit-linear-gradient(to right, #420068 0%, #AB8EBC 100%);
+    background: -moz-linear-gradient(to right, #420068 0%, #AB8EBC 100%);
+    background: linear-gradient(to right, #420068 0%, #AB8EBC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;">Qui somme-nous</h1>
+</div>
+
+<div style="display:flex;justify-content:center;margin-top:80px;">
+    <div class="card" style="width:700px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; display:flex;flex-direction:column;align-items:center;text-align:center;border:none;">
+        <p style="margin:7px;">Nous agissons pour un monde inclusif sur le plan numérique. Un monde dans lequel les jeunes, les femmes et les personnes les plus fragiles ont accès aux compétences numériques et de programmation informatique. Un monde où tous se sentent libres et légitimes de relever les défis numériques à impact positif avec des acteurs d’entreprises engagés</p>
+        <p style="margin:7px;">WITECH</p>
+    </div>
+
+</div>
+
+
+<div style="margin-top:70px;text-align:center;">
+    <h1 style="background: #420068;
+    background: -webkit-linear-gradient(to right, #420068 0%, #AB8EBC 100%);
+    background: -moz-linear-gradient(to right, #420068 0%, #AB8EBC 100%);
+    background: linear-gradient(to right, #420068 0%, #AB8EBC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;">CONVICTIONS</h1>
+
+</div>
+
+
+<div style="display:flex;justify-content:space-around;margin-top:80px;">
+
+    <div class="card" style="width:700px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; display:flex;flex-direction:column;align-items:center;text-align:center;border:none;">
+        <h4 style="margin:10px;color:#CEAAE3;">CROYANCE</h4>
+        <p style="margin:10px;">Nous croyons au potentiel inné de chaque individu qu’importe le domaine et les aspirations. Nous souhaitons valoriser chaque parcours et élargir les horizons vers les métiers de la tech</p>
+       
+    </div>
+
+    <div class="card" style="width:700px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; display:flex;flex-direction:column;align-items:center;text-align:center;border:none;">
+         <h4 style="margin:10px;color:#CEAAE3;">PERSUASION</h4>
+        <p style="margin:10px;">Nous sommes convaincus de l’importance de lutter contre les inégalités sociales pour contribuer à un avenir plus juste. Nous sommes certains que la présence des femmes dans la tech est un vecteur de réussite et de performance pour les organisations</p>
+        
+    </div>
+
+</div>
+
+
+
+<section>
+
+<div style="display:flex;justify-content:center;margin-top:100px;">
+
+
+    <div id="ovale">
+
+        <div style="text-align:center;">
+
+        <h1 style="background: #420068;
+    background: -webkit-linear-gradient(to right, #420068 0%, #AB8EBC 100%);
+    background: -moz-linear-gradient(to right, #420068 0%, #AB8EBC 100%);
+    background: linear-gradient(to right, #420068 0%, #AB8EBC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;">L'EQUIPE WITECH</h1>
+        </div>
+        
+
+    <div style="display:flex;justify-content:space-between;width:850px;">
+    
+        <div style="display:flex;background:#fff; width:400px;height:200px; justify-content:space-evenly;border-radius:15px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;margin-top:50px;">
+            <div style="position:relative;top:-15px;left:-15px;">
+                <img style="height:150px;border-radius:25%;" src="{{ asset('asset/img/imageFille.jpg')}}" alt="">
+            </div>
+
+            <div style="display:flex;flex-direction:column;justify-content:space-between;">
+                <h4 style="margin:5px;">Mouna JABRI</h4>
+                <p style="margin:5px;" class="text-muted">Présidente de WITECH</p>
+                <div style="border-bottom:1px solid rgba(0,0,0,.125);"></div>
+                <a  style="margin:5px;" href=""><i class="fab fa-linkedin-in"></i>  </a>
+            </div>
+        
+        
+        </div>
+
+
+        <div style="display:flex;background:#fff; width:400px;height:200px; justify-content:space-evenly;border-radius:15px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;margin-top:50px;">
+            <div style="position:relative;top:-15px;left:-15px;">
+                <img style="height:150px;border-radius:25%;" src="{{ asset('asset/img/imageFille.jpg')}}" alt="">
+            </div>
+
+            <div style="display:flex;flex-direction:column;justify-content:space-between;">
+                <h4 style="margin:5px;">Nasreddine MENACER</h4>
+                <p style="margin:5px;" class="text-muted">Formateur en programmation informatique</p>
+                <div style="border-bottom:1px solid rgba(0,0,0,.125);"></div>
+                <a  style="margin:5px;" href=""><i class="fab fa-linkedin-in"></i>  </a>
+            </div>
+        
+        
+        </div>
+
+        
+    
+    </div>
+
+
+     <div style="display:flex;justify-content:space-between;width:850px;margin-top:100px;">
+    
+        <div style="display:flex;background:#fff; width:400px;height:200px; justify-content:space-evenly;border-radius:15px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;margin-top:50px;">
+            <div style="position:relative;top:-15px;left:-15px;">
+                <img style="height:150px;border-radius:25%;" src="{{ asset('asset/img/imageFille.jpg')}}" alt="">
+            </div>
+
+            <div style="display:flex;flex-direction:column;justify-content:space-between;">
+                <h4 style="margin:5px;">Yasmina ELAZIZ</h4>
+                <p style="margin:5px;" class="text-muted">Formatrice en développement web</p>
+                <div style="border-bottom:1px solid rgba(0,0,0,.125);"></div>
+                <a  style="margin:5px;" href=""><i class="fab fa-linkedin-in"></i>  </a>
+            </div>
+        
+        
+        </div>
+
+
+        <div style="display:flex;background:#fff; width:400px;height:200px; justify-content:space-evenly;border-radius:15px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;margin-top:50px;">
+            <div style="position:relative;top:-15px;left:-15px;">
+                <img style="height:150px;border-radius:25%;" src="{{ asset('asset/img/imageFille.jpg')}}" alt="">
+            </div>
+
+            <div style="display:flex;flex-direction:column;justify-content:space-between;">
+                <h4 style="margin:5px;">Asmaa A</h4>
+                <p style="margin:5px;" class="text-muted">Intervenante aux ateliers de connaissance de soi </p>
+                <div style="border-bottom:1px solid rgba(0,0,0,.125);"></div>
+                <a  style="margin:5px;" href=""><i class="fab fa-linkedin-in"></i>  </a>
+            </div>
+        
+        
+        </div>
+
+        
+    
+    </div>
+
+
+    </div>
+
+</div>
+
+
+
+</section>
+
+    <div style="margin-top:100px;display:flex;flex-direction:column;align-items:center;">
+
+        <div style="margin:50px;">
+                <h1 style="background: #420068;
+    background: -webkit-linear-gradient(to right, #420068 0%, #AB8EBC 100%);
+    background: -moz-linear-gradient(to right, #420068 0%, #AB8EBC 100%);
+    background: linear-gradient(to right, #420068 0%, #AB8EBC 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;">NOS PARTENAIRES</h1>
+        </div>
+
+        <div style="display:flex;border-radius:15px;box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">
+            <div style="padding:20px;">
+                <img style="height:120px;width:150px;" src="{{ asset('asset/img/mljLogo.svg') }}" alt="">
+            </div>
+            <div style="padding:20px;">
+                <img style="height:120px;width:150px;" src="{{ asset('asset/img/yvelineLogo.jpg') }}" alt="">
+            </div>
+            <div style="padding:20px;">
+                <img style="height:120px;width:150px;" src="{{ asset('asset/img/sigmaLogo.png') }}" alt="">
+            </div>
+            <div style="padding:20px;">
+                <img style="height:120px;width:150px;" src="{{ asset('asset/img/eiapicLogo.jpg') }}" alt="">
+            </div>
+            <div style="padding:20px;">
+                <img style="height:120px;width:150px;" src="{{ asset('asset/img/ifepLogo.jpg') }}" alt="">
+            </div>
+        </div>
+    
+    </div>
+
+
+<div style="display:flex;justify-content:center;">
+
+<div style="border-bottom:1px solid rgba(0,0,0,.125);margin-top:100px;width:850px;"></div>
+</div>
+
+
+
+ <footer style="margin-top:80px; display:flex;flex-direction:column;justify-content:center;align-items:center;">
+        <div style="background: url( {{ asset('asset/img/banniereFooter.jpg')}} );width:800px;height:300px; display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;">
+
+            <p style="font-size:20px;color:white;">"Aucune lutte ne peut aboutir sans que les femmes y participent aux côtés des hommes. Il y a deux pouvoirs dans le monde. L'un celui de l'épée, l'autre celui de la plume. Il en existe un troisième plus fort encore que les deux premiers :
+celui des femmes."</p>
+            <p style="color:white">Malala Yousafzai, prix Nobel de la Paix</p>
+        
+        </div>
+
+
+        <div style="width:900px;height:300px; background-color:#CEAAE3;margin-top:15px;display:flex;justify-content:space-around;">
+            <div style="display:flex;justify-content:center;align-items:center;">
+                <a class="footerLink"  href="{{ path('contactNous') }}"><h4>NOUS CONTACTER</h4></a>
+            </div>
+
+            <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;">
+                <h4>NOUS SUIVRE</h4>
+
+                <div style="display:flex;justify-content:space-evenly; width:200px;">
+                    <a href="https://www.instagram.com/wi_tech_/?hl=fr" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/wi-tech-io/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/witech.io/" target="_blank"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        
+        </div>
+    
+    
+    </footer>
+
+<div class="cRetour">
+    </div>
+{% endblock %}

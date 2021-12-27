@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<title>
+			{% block title %}Domain Expansion
+			{% endblock %}
+		</title>
+
+        <style>
+        header{
+            position:fixed;
+            top: 0;
+            width:100%;
+            transition: 0.6s;
+            background: #fff;
+            z-index:10000;
+        }
+
+        header.sticky{
+            background: #9c6bd0;
+            
+        }
+
+        
+        </style>
+		{% block stylesheets %}
+			
+{% endblock %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+<script>
+    window.addEventListener("scroll", function(){
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0 );
+    })
+
+</script>
+{% block javascripts %}
+
+{% endblock %}
+
+<header>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <p><img style="width:200px;" src="{{ asset('asset/img/logoWitech.png')}}" alt=""></p>
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="width:100%; diplay:flex;justify-content:space-evenly;">
+        <li class="nav-item">
+          <a style="font-size:24px;" class="nav-link " aria-current="page" href="{{  path('page_accueil')  }}">ACCUEIL</a>
+        </li>
+        <li class="nav-item">
+          <a style="font-size:24px;" class="nav-link " aria-current="page" href="{{ path('à-propos') }}">A PROPOS</a>
+        </li>
+        <li class="nav-item">
+          <a style="font-size:24px;" class="nav-link" href="{{ path('contactNous') }}">CONTACT</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a style="font-size:24px;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            NOS ACTIONS
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a style="color:#420068;" class="dropdown-item" href="{{ path('programmation-info') }}">PROGRAMMATION</a></li>
+            <li><a style="color:#420068;" class="dropdown-item" href="{{ path('competenceNumerique') }}">COMPETENCE NUMERIQUE</a></li>
+            <li><a style="color:#420068;" class="dropdown-item" href="{{ path('ateliersSensCritique') }}">SENS CRITIQUE</a></li>
+            <li><a style="color:#420068;" class="dropdown-item" href="{{ path('VendrediEntreprise') }}">IMMERSION ENTREPRISE</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a style="color:#420068;" class="dropdown-item" href="{{ path('nos-actions') }}">NOS ACTIONS</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+</header>
+{% block body %}
+
+
+{% endblock %}
